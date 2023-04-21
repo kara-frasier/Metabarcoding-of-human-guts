@@ -5,7 +5,9 @@ Fecal microbiota transplant (FMT) study. Metabarcoding of human guts.
 Kara Frasier
 # Code 04/21
 conda activate genomics
+
 cd Metabarcoding-of-human-guts/
+
 touch testfile.txt
 echo 'a test' > testfile.txt
 git add testfile.txt
