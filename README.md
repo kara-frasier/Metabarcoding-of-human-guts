@@ -39,3 +39,6 @@ qiime feature-table tabulate-seqs --i-data rep-seqs.qza --o-visualization rep-se
 qiime feature-classifier classify-sklearn --i-classifier /tmp/gen711_project_data/reference_databases/classifier.qza --i-reads rep-seqs.qza --o-classification FMT-taxonomy.qza
 
 qiime taxa barplot --i-table feature_table.qza --i-taxonomy FMT-taxonomy.qza --o-visualization barplot-1.qzv
+
+<img width="1165" alt="Screen Shot 2023-05-05 at 1 41 47 PM" src="https://user-images.githubusercontent.com/130784549/236565007-6a28ca4b-e189-4a78-84fb-6cc7d005ecb2.png">
+
