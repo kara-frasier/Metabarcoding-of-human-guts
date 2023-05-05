@@ -42,3 +42,11 @@ qiime taxa barplot --i-table feature_table.qza --i-taxonomy FMT-taxonomy.qza --o
 
 # Metadata and Background
 qiime taxa barplot --i-table feature_table.qza --i-taxonomy FMT-taxonomy.qza --m-metadata-file sample-metadata.tsv --o-visualization barplot-1.qzv
+
+qiime taxa barplot \
+    --i-table feature_table.qza \
+    --i-taxonomy FMT-taxonomy.qza \
+    --m-metadata-file sample-metadata.tsv \
+    --o-visualization barplot-1.qzv
+
+qiime taxa barplot --i-table feature_table.qza --i-taxonomy FMT-taxonomy.qza --m-metadata-file sample-metadata.tsv --o-visualization barplot-1.qzv
