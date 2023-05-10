@@ -20,9 +20,15 @@ cp  /tmp/gen711_project_data/fastp-single.sh ~/fastq-single.sh
 
 chmod +x ~/fastq-single.sh
 
+ ./fastp-single.sh 120 /tmp/gen711_project_data/FMT_3/fmt-tutorial-demux-2 import_fastp
+ 
+ ./fastp-single.sh 120 /tmp/gen711_project_data/FMT_3/fmt-tutorial-demux-1 import_fastp2
+ 
 conda activate qiime2-2022.8
 
-qiime tools import --type "SampleData[PairedEndSequencesWithQuality]"  --input-format CasavaOneEightSingleLanePerSampleDirFmt --input-path trimmed_fastq --output-path trimmed_fastq/imported_files 
+qiime tools import --type "SampleData[SequencesWithQuality]" --input-format CasavaOneEightSingleLanePerSampleDirFmt --input-path import_fastp --output-path import_qiime
+
+qiime tools import --type "SampleData[SequencesWithQuality]" --input-format CasavaOneEightSingleLanePerSampleDirFmt --input-path import_fastp2 --output-path import_qiime
 
 # Cutadapt
 qiime cutadapt trim-single --i-demultiplexed-sequences import_qiime.qza --p-front TACGTATGGTGCA --p-discard-untrimmed --p-match-adapter-wildcards --verbose --o-trimmed-sequences import_cutadapt
