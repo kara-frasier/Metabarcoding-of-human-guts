@@ -58,7 +58,7 @@ qiime taxa barplot \
 qiime taxa barplot --i-table feature_table.qza --i-taxonomy FMT-taxonomy.qza --m-metadata-file sample-metadata.tsv --o-visualization barplot-1.qzv
 
 # Filtered Phylogenetic Tree
-qiime phylogeny align-to-tree-mafft-fasttree \
+  qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences rep-seqs.qza \
   --o-alignment alignments \
   --o-masked-alignment masked-alignment \
@@ -70,7 +70,7 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --i-phylogeny rooted-tree.qza \
   --i-table feature_table.qza \
   --p-sampling-depth 500 \
-  --m-metadata-file metadata.tsv  \
+  --m-metadata-file sample-metadata.tsv \
   --p-n-jobs-or-threads 4 \
   --output-dir core-metrics
   
@@ -78,25 +78,25 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --i-table core-metrics/rarefied_table.qza \
   --o-relative-frequency-table core-metrics/relative_rarefied_table
   
-  qiime diversity pcoa-biplot \
+    qiime diversity pcoa-biplot \
   --i-features core-metrics/relative_rarefied_table.qza \
   --i-pcoa core-metrics/unweighted_unifrac_pcoa_results.qza \
   --o-biplot core-metrics/unweighted_unifrac_pcoa_biplot
   
-  qiime emperor biplot \
+    qiime emperor biplot \
   --i-biplot core-metrics/unweighted_unifrac_pcoa_biplot.qza \
-  --m-sample-metadata-file metadata.tsv \
+  --m-sample-metadata-file sample-metadata.tsv \
   --o-visualization core-metrics/unweighted_unifrac_pcoa_biplot
   
-  qiime diversity alpha-group-significance \
+    qiime diversity alpha-group-significance \
   --i-alpha-diversity core-metrics/shannon_vector.qza \
-  --m-metadata-file metadata.tsv \
+  --m-metadata-file sample-metadata.tsv \
   --o-visualization core-metrics/alpha-group-significance
   
-  qiime diversity beta-group-significance \
+    qiime diversity beta-group-significance \
   --i-distance-matrix core-metrics/unweighted_unifrac_distance_matrix.qza \
-  --m-metadata-file metadata.tsv \
-  --m-metadata-column <column_in_metadata_that_groups_replicates> \
+  --m-metadata-file sample-metadata.tsv \
+  --m-metadata-column treatment-group \
   --p-pairwise \
   --o-visualization core-metrics/unweighted_unifrac-beta-group-significance
   
