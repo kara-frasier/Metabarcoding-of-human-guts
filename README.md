@@ -103,6 +103,7 @@ qiime diversity beta-group-significance \
 # Plots
 ![image](https://github.com/kara-frasier/Metabarcoding-of-human-guts/assets/130784549/251dd70b-1cb6-4297-905c-3587cdeaa7f0)
 ![image](https://github.com/kara-frasier/Metabarcoding-of-human-guts/assets/130784549/d47aa2d7-8f41-47d6-9a44-d7c7814c7980)
+![image](https://github.com/kara-frasier/Metabarcoding-of-human-guts/assets/130784549/d813a1c8-eb96-4658-940f-f901f672b7a8)
 
 
   
